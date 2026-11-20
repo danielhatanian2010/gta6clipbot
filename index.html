@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GTA6 Clip Bot</title>
+<style>body{font-family:system-ui,Arial,sans-serif;background:#0d0d12;color:#eee;margin:0}main{max-width:720px;margin:0 auto;padding:48px 24px}h1{font-size:2.2rem;margin:0 0 8px}p{line-height:1.6;color:#c9c9d1}.btn{display:inline-block;background:#fe2c55;color:#fff;padding:14px 26px;border-radius:8px;text-decoration:none;font-weight:700;margin:16px 0}ol li{margin:6px 0;color:#c9c9d1}footer{margin-top:48px;font-size:.9rem}footer a{color:#9ab}</style></head>
+<body><main>
+<h1>GTA6 Clip Bot</h1>
+<p>A private tool that posts popular, credited GTA 6 gameplay clips from Twitch streamers to my own TikTok, YouTube and Instagram accounts. Every post credits and links the original streamer.</p>
+<h2>How it works</h2>
+<ol><li>Connect my TikTok account once with the button below (Login with TikTok).</li><li>A scheduled job picks a top GTA 6 Twitch clip, reformats it to vertical and adds a credit to the streamer.</li><li>The clip is posted to my TikTok account through the TikTok Content Posting API.</li></ol>
+<a class="btn" id="connect" href="#">Connect TikTok</a>
+<p style="font-size:.9rem">Only the account owner uses this tool. Scopes requested: user.info.basic, video.upload, video.publish.</p>
+<footer><a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms of Service</a> &middot; Contact: scrollfuel2010@gmail.com</footer>
+</main>
+<script>
+const p=new URLSearchParams({client_key:"awbpmuq4dpnugaau",scope:"user.info.basic,video.upload,video.publish",response_type:"code",redirect_uri:"https://danielhatanian2010.github.io/gta6clipbot/callback.html",state:Math.random().toString(36).slice(2)});
+document.getElementById("connect").href="https://www.tiktok.com/v2/auth/authorize/?"+p.toString();
+</script>
+</body></html>
