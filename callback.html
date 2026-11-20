@@ -1,14 +1,16 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GTA6 Clip Bot - Connected</title>
-<style>body{font-family:system-ui,Arial,sans-serif;background:#0d0d12;color:#eee;margin:0}main{max-width:720px;margin:0 auto;padding:48px 24px}p{color:#c9c9d1;line-height:1.6}a{color:#9ab}</style></head>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GTA6 Clip Bot - TikTok connected</title>
+<style>body{font-family:system-ui,Arial,sans-serif;background:#0d0d12;color:#eee;margin:0}main{max-width:720px;margin:0 auto;padding:48px 24px}p{color:#c9c9d1;line-height:1.6}a{color:#9ab}code{display:block;word-break:break-all;padding:12px;border:1px solid #555;border-radius:8px;margin:12px 0;background:#16161d}button{background:#fe2c55;color:#fff;border:0;padding:10px 18px;border-radius:8px;font-weight:700;cursor:pointer}</style></head>
 <body><main>
 <h1 id="t">Connecting...</h1>
 <p id="m"></p>
+<div id="owner" hidden><p>Owner setup: paste this one-time code into the <b>GTA6 TikTok Auth (one-time)</b> workflow on GitHub within a few minutes. Codes work once.</p><code id="code"></code><button id="copy">Copy code</button></div>
 <p><a href="./">Back to GTA6 Clip Bot</a></p>
 </main>
 <script>
-const q=new URLSearchParams(location.search);
-if(q.get("code")){document.getElementById("t").textContent="TikTok connected";document.getElementById("m").textContent="Your TikTok account is connected to GTA6 Clip Bot. The bot can now post your scheduled GTA 6 clips. You can revoke access any time in TikTok: Settings and privacy > Security > Apps and services.";}
-else{document.getElementById("t").textContent="Not connected";document.getElementById("m").textContent="TikTok did not return an authorization ("+(q.get("error_description")||q.get("error")||"no code")+").";}
+const q=new URLSearchParams(location.search),c=q.get("code"),e=q.get("error");
+const T=document.getElementById("t"),M=document.getElementById("m");
+if(c){T.textContent="TikTok connected";M.textContent="Your TikTok account is connected to GTA6 Clip Bot. The bot can now post your scheduled GTA 6 clips. You can revoke access any time in TikTok: Settings and privacy > Security > Apps and services.";document.getElementById("owner").hidden=false;document.getElementById("code").textContent=c;const b=document.getElementById("copy");b.onclick=()=>navigator.clipboard.writeText(c).then(()=>b.textContent="Copied");}
+else{T.textContent="Not connected";M.textContent="TikTok did not return an authorization ("+(q.get("error_description")||e||"no code")+").";}
 </script>
 </body></html>
